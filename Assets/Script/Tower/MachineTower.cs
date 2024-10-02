@@ -60,16 +60,13 @@ public class MachineTower : MonoBehaviour
     {
         if (EnemyDistanceComopute() != null)
         {
-            // 获取目标位置并忽略 Y 轴
+
             Vector3 targetPosition = new Vector3(EnemyDistanceComopute().transform.position.x, towertop.transform.position.y, EnemyDistanceComopute().transform.position.z);
 
-            // 计算指向目标位置的方向
             Vector3 direction = targetPosition - towertop.transform.position;
 
-            // 生成面向目标方向的旋转（忽略 Y 轴）
             Quaternion rotation = Quaternion.LookRotation(direction);
 
-            // 应用旋转
             towertop.transform.rotation = rotation;
         }
     }
