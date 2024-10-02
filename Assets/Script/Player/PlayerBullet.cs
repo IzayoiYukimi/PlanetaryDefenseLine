@@ -29,14 +29,14 @@ public class PlayerBullet : MonoBehaviour
         lifetime -= Time.deltaTime;
         if (lifetime < 0) Destroy(gameObject);
     }
-    private void OnTriggerEnter(Collider other)
+ 
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyHP>().TakeDamage(bulletdamage);
+            collision.gameObject.GetComponent<EnemyHP>().TakeDamage(bulletdamage);
         }
         Instantiate(blazing, transform.position, transform.rotation);
         Destroy(gameObject);
     }
-
 }

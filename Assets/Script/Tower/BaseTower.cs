@@ -23,8 +23,8 @@ public class BaseTower : MonoBehaviour
     {
         EnemySearch();
         TowerAiming();
-        hastarget = (EnemyDistanceComopute() != null);
-        if (hastarget) targetpos = EnemyDistanceComopute().transform.position;
+        hastarget = (ComputeEnemyDistance() != null);
+        if (hastarget) targetpos = ComputeEnemyDistance().transform.position;
     }
 
     void EnemySearch()
@@ -40,7 +40,9 @@ public class BaseTower : MonoBehaviour
             }
         }
     }
-    GameObject EnemyDistanceComopute()
+
+    //警戒範囲中の中に一番近い敵を返す
+    GameObject ComputeEnemyDistance()
     {
         float _enemydistances = warningradius;
         GameObject _enemyobj = null;
@@ -56,20 +58,17 @@ public class BaseTower : MonoBehaviour
         return _enemyobj;
     }
 
+    //タワートップ（武器）の回転
     void TowerAiming()
     {
-        if (EnemyDistanceComopute() != null)
+        if (ComputeEnemyDistance() != null)
         {
-            // 获取目标位置并忽略 Y 轴
-            Vector3 targetPosition = new Vector3(EnemyDistanceComopute().transform.position.x, towertop.transform.position.y, EnemyDistanceComopute().transform.position.z);
+            Vector3 targetPosition = new Vector3(ComputeEnemyDistance().transform.position.x, towertop.transform.position.y, ComputeEnemyDistance().transform.position.z);
 
-            // 计算指向目标位置的方向
             Vector3 direction = targetPosition - towertop.transform.position;
 
-            // 生成面向目标方向的旋转（忽略 Y 轴）
             Quaternion rotation = Quaternion.LookRotation(direction);
 
-            // 应用旋转
             towertop.transform.rotation = rotation;
         }
     }

@@ -21,6 +21,9 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField] GameObject targetBasetower;
 
     [SerializeField] GameObject machinetowerprefab;
+    [SerializeField] GameObject missiletowerprefab;
+    [SerializeField] GameObject lasertowerprefab;
+
 
     public BaseTower skill2targettower;
 
@@ -152,7 +155,26 @@ public class PlayerSkill : MonoBehaviour
             Destroy(skill2targettower.gameObject);
             energymanager.TakeEnergy(200);
         }
-      
+    }
+    public void UpdateToMissileTower()
+    {
+        if (energymanager.SurplusTest(400))
+        {
+            Instantiate(missiletowerprefab, skill2targettower.gameObject.transform.position, skill2targettower.gameObject.transform.rotation);
+            isusingskill2 = false;
+            Destroy(skill2targettower.gameObject);
+            energymanager.TakeEnergy(400);
+        }
+    }
+    public void UpdateToLaserTower()
+    {
+        if (energymanager.SurplusTest(400))
+        {
+            Instantiate(lasertowerprefab, skill2targettower.gameObject.transform.position, skill2targettower.gameObject.transform.rotation);
+            isusingskill2 = false;
+            Destroy(skill2targettower.gameObject);
+            energymanager.TakeEnergy(400);
+        }
     }
 
     void PickItem()

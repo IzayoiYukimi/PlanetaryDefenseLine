@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9071302378755546039}
   - component: {fileID: 2102211787246145761}
   m_Layer: 0
-  m_Name: SM_Prop_Turret_Medium_01
+  m_Name: LaserTowerLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

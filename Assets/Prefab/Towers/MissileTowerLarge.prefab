@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 1428039875921216163}
   - component: {fileID: 3771722385429744039}
   m_Layer: 0
-  m_Name: SM_Prop_Turret_Large_03
+  m_Name: MissileTowerLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
