@@ -129,6 +129,37 @@ Transform:
   - {fileID: 4933508491998632116}
   m_Father: {fileID: 5158095176702485075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &173299432738823596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2705199329466009134}
+  m_Layer: 6
+  m_Name: RaycastPoint-CastTower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2705199329466009134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173299432738823596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 345888801636820757}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &247513924567261947
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +976,7 @@ Transform:
   - {fileID: 4943397842860352713}
   - {fileID: 1086151640685846647}
   - {fileID: 7983020340136890854}
+  - {fileID: 2705199329466009134}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9087730110142476365
@@ -1042,6 +1074,7 @@ MonoBehaviour:
   MaxShield: 100
   health: 0
   MaxHealth: 100
+  gameover: 0
   audiosourceShieldhit: {fileID: 1058460427189034929}
   audiosourceShieldBreak: {fileID: 4511965336012825821}
   audiosourceShieldGet: {fileID: 2753861624233056097}
@@ -1165,12 +1198,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e049dd6b8669b7458ef5942308f4ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldcharge: {fileID: 0}
-  skill1: {fileID: 0}
-  skill2: {fileID: 0}
+  managers: {fileID: 0}
+  updatemenu: {fileID: 0}
+  raycastpos: {fileID: 2705199329466009134}
+  targetBasetower: {fileID: 0}
+  machinetowerprefab: {fileID: 6364625113208260462, guid: 63e4944b3b1958a449b5c655aec8e43c, type: 3}
+  missiletowerprefab: {fileID: 7640305810824823935, guid: c154ed6471cd022478f956179f025ab9, type: 3}
+  lasertowerprefab: {fileID: 927838783164816449, guid: 7fe057d5d5dcedc4db7dca0a8601ff7c, type: 3}
+  skill2targettower: {fileID: 0}
   item: 000000000000000000000000
+  nowshieldchargeCD: 0
+  shieldchargeCD: 3
   overpickup: 1
   isusingskill: 0
+  isusingskill1: 0
+  isusingskill2: 0
+  israyget: 0
 --- !u!114 &7232030527144030091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,7 +1277,7 @@ GameObject:
   - component: {fileID: 7089796842467641993}
   m_Layer: 6
   m_Name: PickRange
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2290,7 +2333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7983020340136890854}
   m_Layer: 6
-  m_Name: RaycastPoint
+  m_Name: RaycastPoint-SetTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
