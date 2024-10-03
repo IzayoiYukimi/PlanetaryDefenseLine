@@ -23,7 +23,7 @@ public class EnergyManager : MonoBehaviour
         energybutton.UpdateUI();
         if (Input.GetKeyDown(KeyCode.F12))
         {
-            energy = 9999;
+            energy = 999999;
         }
     }
 
@@ -32,6 +32,8 @@ public class EnergyManager : MonoBehaviour
         if (_energy > energy) return;
         energy -= _energy;
     }
+
+    //w“ü‘O‚ÌŽcŠzŠm”F
     public bool SurplusTest(int _energy)
     {
         if (_energy > energy)

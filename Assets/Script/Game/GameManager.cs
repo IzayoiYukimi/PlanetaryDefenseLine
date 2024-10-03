@@ -43,12 +43,12 @@ public class GameManager : MonoBehaviour
         }
         string[] joystickAxes = new string[]
        {
-            "Horizontal", "Vertical" // 根据你的映射情况调諄E
+            "Horizontal", "Vertical" 
        };
 
         foreach (string axis in joystickAxes)
         {
-            if (Mathf.Abs(Input.GetAxis(axis)) > 0.1f) // 0.1f 是一个阈值，可以根据需要调諄E
+            if (Mathf.Abs(Input.GetAxis(axis)) > 0.1f) 
             {
                 device = ControlDevice.Controller;
             }

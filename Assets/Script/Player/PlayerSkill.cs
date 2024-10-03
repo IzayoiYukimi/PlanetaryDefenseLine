@@ -79,7 +79,7 @@ public class PlayerSkill : MonoBehaviour
         if (nowshieldchargeCD >= shieldchargeCD) nowshieldchargeCD = shieldchargeCD;
         else nowshieldchargeCD += Time.deltaTime;
     }
-
+    //シールドバッテリーが持ってるとき＆シールド未満＆冷却完了時シールドチャージ
     void ShieldCharge()
     {
         if (item[0] > 0 && playerhp.shield < playerhp.MaxShield && nowshieldchargeCD >= shieldchargeCD)
@@ -145,7 +145,7 @@ public class PlayerSkill : MonoBehaviour
             }
         }
     }
-
+    //タワーアップデート
     public void UpdateToMachineTower()
     {
         if(energymanager.SurplusTest(200))
