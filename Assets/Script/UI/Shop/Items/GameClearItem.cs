@@ -9,6 +9,8 @@ public class GameClearItem : ItemBase
     {
         itemunlock = true;
     }
+
+    //Use()Ä’è‹`
     public override void Use()
     {
         base.Use();
