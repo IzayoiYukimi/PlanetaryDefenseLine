@@ -2700,7 +2700,7 @@ GameObject:
   - component: {fileID: 184970530}
   - component: {fileID: 184970531}
   m_Layer: 0
-  m_Name: Gointo Trigger
+  m_Name: GointoRocket Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
