@@ -22,8 +22,8 @@ public class BaseTowerWeapon : MonoBehaviour
     bool hastarger = false;
 
 
-    float attackspeed = 5;
-    float attacktime;
+    float attackspeed = 5f;
+    float reloadtime;
     bool attackset = true;//cock
 
 
@@ -59,14 +59,14 @@ public class BaseTowerWeapon : MonoBehaviour
             _bullet2.GetComponent<PlayerBullet>().Direction = (_targetpos - gunpoint2.transform.position).normalized;
 
             attackset = false;
-            attacktime = 0.0f;
+            reloadtime = 0.0f;
         }
     }
     void AttackSpeedSet()
     {
-        attacktime += Time.deltaTime;
+        reloadtime += Time.deltaTime;
 
-        if (attacktime >= 1.0 / attackspeed)
+        if (reloadtime >= 1.0f / attackspeed)
         {
             attackset = true;
         }
