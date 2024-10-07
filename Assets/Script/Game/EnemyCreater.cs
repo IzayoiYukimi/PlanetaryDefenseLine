@@ -6,11 +6,17 @@ using UnityEngine.SocialPlatforms.Impl;
 public class EnemyCreater : MonoBehaviour
 {
     [SerializeField] GameObject zombieprefab;
+    [SerializeField] GameObject flyenemyboomprefab;
+    [SerializeField] GameObject flyenemyshootprefab;
     [SerializeField] GameObject managers;
 
     List<int> enemylist = new List<int>();
     int stagenum = 0;
     int stageenemynum = 0;
+
+    [SerializeField] bool isflyenemycanbecreated = false;
+    int killedenemy = 0;
+    [SerializeField] int createenemy = 0;
 
     EnergyManager energymanager;
     EnemyCounter enemycounter;
@@ -30,9 +36,22 @@ public class EnemyCreater : MonoBehaviour
     {
         if (stageenemynum > 0)
         {
-            GenerateEnemy();
+            GenerateEnemy(zombieprefab);
             stageenemynum--;
         }
+
+        if (killedenemy > 100)
+        {
+            isflyenemycanbecreated = true;
+        }
+        if(createenemy > 10) 
+        {
+            GenerateEnemy(flyenemyboomprefab);
+            GenerateEnemy(flyenemyboomprefab);
+            GenerateEnemy(flyenemyshootprefab);
+            createenemy = 0;
+        }
+
         //if (stageenemynum == 0 && enemycounter.enemycleared)
         //{
         //    enemylist.Add(enemylist[stagenum] + 50);
@@ -40,10 +59,12 @@ public class EnemyCreater : MonoBehaviour
         //    stageenemynum = enemylist[stagenum];
         //}
     }
-    void GenerateEnemy()
+    void GenerateEnemy(GameObject _prefab)
     {
         int random = Random.Range(0, createpoint.Count);
-        GameObject newObj = Instantiate(zombieprefab, createpoint[random].position, Quaternion.identity);
+        GameObject newObj = Instantiate(_prefab, createpoint[random].position, Quaternion.identity);
+
+        if (isflyenemycanbecreated) createenemy++;
 
         EnemyHP enemyhp = newObj.GetComponent<EnemyHP>();
         enemyhp.OnDestroyed += OnEnemyDestroyed;
@@ -51,7 +72,8 @@ public class EnemyCreater : MonoBehaviour
     void OnEnemyDestroyed()
     {
         energymanager.energy += 5;
-        GenerateEnemy();
-        GenerateEnemy();
+        GenerateEnemy(zombieprefab);
+        GenerateEnemy(zombieprefab);
+        killedenemy++;
     }
 }
