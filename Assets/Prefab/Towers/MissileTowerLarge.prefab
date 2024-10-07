@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 6533831939825924536}
   - component: {fileID: 4886745275897214865}
   m_Layer: 0
-  m_Name: SM_Prop_Turret_Large_03_Launcher_01
+  m_Name: Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 4313042272760154637}
   - component: {fileID: 6824804647082920558}
   m_Layer: 0
-  m_Name: SM_Prop_Turret_Large_03_Top_01
+  m_Name: TowerTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
