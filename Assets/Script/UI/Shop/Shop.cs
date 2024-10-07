@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     [SerializeField] GameObject shopmenu;
-    bool shopmenuactive;
+    public bool shopmenuactive;
     public void IsClicked()
     {
         shopmenuactive = !shopmenuactive;

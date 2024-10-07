@@ -19,7 +19,7 @@ public class BaseTowerWeapon : MonoBehaviour
 
 
 
-    bool hastarger = false;
+    bool hastarget = false;
 
 
     float attackspeed = 5f;
@@ -36,7 +36,7 @@ public class BaseTowerWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hastarger = GetComponent<BaseTower>().hastarget;
+        hastarget = GetComponent<BaseTower>().hastarget;
         TowerFire();
         AttackSpeedSet();
     }
@@ -44,7 +44,7 @@ public class BaseTowerWeapon : MonoBehaviour
 
     void TowerFire()
     {
-        if (attackset && hastarger)
+        if (attackset && hastarget)
         {
             int random = Random.Range(0, basetowerSE.Count);
             audiosourceFire.clip = basetowerSE[random];

@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 
 public class GameClearItem : ItemBase
 {
+    [SerializeField] Shop shop;
+    [SerializeField] GameObject rocket;
     private void Start()
     {
         itemunlock = true;
@@ -15,5 +17,7 @@ public class GameClearItem : ItemBase
     {
         base.Use();
         Debug.Log(iteminfo);
+        rocket.GetComponent<RocketAnimationEvent>().GameClear();
+        shop.shopmenuactive = false;
     }
 }

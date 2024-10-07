@@ -34,7 +34,7 @@ public class EnemyHP : MonoBehaviour
         {
             if (!setdeath)
             {
-                animator.SetTrigger("Death");
+                if (zombiecontroller != null) animator.SetTrigger("Death");
                 gameObject.tag = "Untagged";
                 OnDestroyed.Invoke();
                 setdeath = true;
@@ -45,10 +45,16 @@ public class EnemyHP : MonoBehaviour
 
     void Die()
     {
-        zombiecontroller.Death = true;
-
-        deathtime -= Time.deltaTime;
-        if (deathtime < 0)
+        if (zombiecontroller != null)
+        {
+            zombiecontroller.Death = true;
+            deathtime -= Time.deltaTime;
+            if (deathtime < 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        else
         {
             Destroy(this.gameObject);
         }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3871031976517928158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GunPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 1171571117825817444}
   - component: {fileID: 9071302378755546039}
   - component: {fileID: 2102211787246145761}
-  m_Layer: 0
+  - component: {fileID: -7315319798711642532}
+  m_Layer: 10
   m_Name: LaserTowerLarge
-  m_TagString: Untagged
+  m_TagString: EscalatedTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,6 +162,27 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43712751459505668, guid: 40978c253e1472e4ca6113b96fe8146a, type: 2}
+--- !u!65 &-7315319798711642532
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927838783164816449}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2469482, y: 3.6765385, z: 3.2469432}
+  m_Center: {x: 0, y: 1.8, z: 0}
 --- !u!1 &2005739835143744387
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 2005739835143744387}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 120, y: 120, z: 120}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -257,7 +279,7 @@ GameObject:
   - component: {fileID: 9221911495076240577}
   - component: {fileID: 6477599973893115539}
   - component: {fileID: 7589945046968976753}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_Turret_Medium_01_Gun_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +547,7 @@ GameObject:
   - component: {fileID: 6753953237403104739}
   - component: {fileID: 8425448097199801057}
   - component: {fileID: 18340442068383886}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_Turret_Medium_01_Barrell_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +654,7 @@ GameObject:
   - component: {fileID: 2932706939095277194}
   - component: {fileID: 7018240982752491706}
   - component: {fileID: 7315177330893768114}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Prop_Turret_Medium_01_Pivot_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,8 +792,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ad39084f0eb62b4429d51703236aed55, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -863,13 +885,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4086692083089248737}
     m_Modifications:
+    - target: {fileID: 1114964555166366, guid: 170594480e9ccf546ae1a768865001d3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504922493067198, guid: 170594480e9ccf546ae1a768865001d3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1870119644629218, guid: 170594480e9ccf546ae1a768865001d3, type: 3}
       propertyPath: m_Name
       value: FX_Laser
       objectReference: {fileID: 0}
     - target: {fileID: 1870119644629218, guid: 170594480e9ccf546ae1a768865001d3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870119644629218, guid: 170594480e9ccf546ae1a768865001d3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956895502281958, guid: 170594480e9ccf546ae1a768865001d3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4450472701733014, guid: 170594480e9ccf546ae1a768865001d3, type: 3}
       propertyPath: m_LocalScale.x

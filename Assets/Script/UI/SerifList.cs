@@ -64,20 +64,9 @@ public class SerifList : MonoBehaviour
        new SerifClass("指揮センター：","そこには運搬ロケットがあるはずだ。運が良ければ、それを使って脱出できる。",4.0f,0,null),
        new SerifClass("指揮センター：","今、そこの座標を送る。注意して行動しろ。",2.0f,9,"了解"),
 
-       new SerifClass(" "," ",1.0f,10,null),//テレポート待ち時間一秒      //敵を倒す待ち時間
+       new SerifClass(" "," ",1.0f,10,null),//テレポート待ち時間一秒      //敵を倒す待ち時間。
 
        new SerifClass(" "," ",1.0f,11,null),
-
-
-
-
-
-
-
-
-
-
-
 
 
 

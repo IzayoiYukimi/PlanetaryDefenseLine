@@ -8,6 +8,10 @@ public class GateController : MonoBehaviour
     AudioSource audiosource;
     Animator animator;
 
+    [SerializeField] GateControlPC PC1;
+    [SerializeField] GateControlPC PC2;
+
+
     bool isopen = false;
     bool ismoving = false;
     // Start is called before the first frame update
@@ -20,6 +24,13 @@ public class GateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (PC1.player != null || PC2.player != null)
+        {
+            player = PC1.player == null ? PC2.player : PC1.player;
+        }
+        else player = null;
+
         if (player != null && !player.GetComponentInChildren<PickRange>().anyiteminrange)
         {
             if (player.GetComponent<PlayerInput>().use && !ismoving)
@@ -44,20 +55,4 @@ public class GateController : MonoBehaviour
     {
         ismoving = false;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            player = other.gameObject;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            player = null;
-        }
-    }
-
 }
