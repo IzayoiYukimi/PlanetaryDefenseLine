@@ -14639,7 +14639,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldBattery (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1328968020511006485, guid: 40ff3046ff85e0443b58c1aaa4ce0262, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16175,7 +16176,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldBattery (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1328968020511006485, guid: 40ff3046ff85e0443b58c1aaa4ce0262, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -17073,7 +17075,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldBattery (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1328968020511006485, guid: 40ff3046ff85e0443b58c1aaa4ce0262, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -19602,7 +19605,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldBattery (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1328968020511006485, guid: 40ff3046ff85e0443b58c1aaa4ce0262, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -21638,7 +21642,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldBattery (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1328968020511006485, guid: 40ff3046ff85e0443b58c1aaa4ce0262, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -21745,7 +21750,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldBattery (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1328968020511006485, guid: 40ff3046ff85e0443b58c1aaa4ce0262, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

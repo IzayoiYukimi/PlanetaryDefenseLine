@@ -10,7 +10,7 @@ public class PlayerBullet : MonoBehaviour
 
     float lifetime = 5.0f;
 
-    float bulletspeed = 20.0f;
+    [SerializeField] float bulletspeed = 50.0f;
 
     public int bulletdamage = 10;
 
