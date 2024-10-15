@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -24,8 +25,11 @@ public class ZombieController : MonoBehaviour
     public int AttackDamage = 5;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+
+        Death = false;
+        GetComponent<CapsuleCollider>().enabled = true;
         idlemode = Random.Range(1, 4);
         animator = GetComponent<Animator>();
         animator.SetInteger("IdleMode", idlemode);

@@ -7,7 +7,7 @@ public class ZombieAttackCollider : MonoBehaviour
     [SerializeField] ZombieController zombiecontroller;
     public bool hit = false;
     // Start is called before the first frame update
-    void Awake()
+    void OnEnable()
     {
         zombiecontroller = GetComponentInParent<ZombieController>();
     }

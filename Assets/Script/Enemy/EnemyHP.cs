@@ -17,12 +17,16 @@ public class EnemyHP : MonoBehaviour
     public int MaxHp = 100;
     float deathtime = 2.0f;
 
+    [SerializeField] string enemytag = "Enemy";
+
     bool setdeath = false;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         hp = MaxHp;
+        gameObject.tag = enemytag;
+        setdeath = false;
         animator = GetComponent<Animator>();
         zombiecontroller = GetComponent<ZombieController>();
     }
@@ -51,12 +55,14 @@ public class EnemyHP : MonoBehaviour
             deathtime -= Time.deltaTime;
             if (deathtime < 0)
             {
-                Destroy(this.gameObject);
+                gameObject.SetActive(false);
+                transform.position = Vector3.zero;
             }
         }
         else
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
+            transform.position = Vector3.zero;
         }
     }
     public void TakeDamage(int _damage)

@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   MaxHp: 20
+  enemytag: FlyEnemy
 --- !u!33 &33712379195663034
 MeshFilter:
   m_ObjectHideFlags: 0

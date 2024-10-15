@@ -18,7 +18,7 @@ public class FlyEnemyShootController : MonoBehaviour
 
     bool findtarget = false;
     // Start is called before the first frame update
-    void Awake()
+    void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();

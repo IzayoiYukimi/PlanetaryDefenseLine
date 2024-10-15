@@ -15,7 +15,7 @@ public class FlyEnemyBoomController : MonoBehaviour
     float boomtime = 2.0f;
 
     // Start is called before the first frame update
-    void Awake()
+    void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
@@ -71,7 +71,7 @@ public class FlyEnemyBoomController : MonoBehaviour
             if (boomtime <= 0)
             {
                 Instantiate(boomprefab, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
 
@@ -82,7 +82,7 @@ public class FlyEnemyBoomController : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             Instantiate(boomprefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -10,7 +10,7 @@ public class FlyEnemyBullet : MonoBehaviour
     float lifetime = 0.0f;
     float speed = 5.0f;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         rb = GetComponent<Rigidbody>();
     }
