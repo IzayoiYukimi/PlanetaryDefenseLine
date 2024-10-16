@@ -110,7 +110,7 @@ public class LaserTower : MonoBehaviour
         isreload = true;
         reloadtime = 0f;
         audiosource_fire.Play();
-        RaycastHit[] hits = Physics.SphereCastAll(gunpoint.transform.position, 2.0f, gunpoint.transform.forward, 30f);
+        RaycastHit[] hits = Physics.SphereCastAll(gunpoint.transform.position, 2.0f, gunpoint.transform.forward, Mathf.Infinity);
 
 
         foreach (RaycastHit hit in hits)
